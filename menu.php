@@ -13,7 +13,7 @@
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                   จัดการหมายเลขบัญชี
+                    จัดการหมายเลขบัญชี
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="?menu=acc-number-addForm">เพิ่มเลขบัญชี</a>
@@ -22,22 +22,23 @@
                 </div>
             </li>
 
-            
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                   บัญทึกบัญชี
+                    บันทึกบัญชี
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="?menu=acc-book-addForm">บันทึกบัญชี</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#อย่าลืมมาใส่ลิงค์">แสดงรายการบัญชี</a>
+                    <a class="dropdown-item" href="?menu=acc-book-show">แสดงรายการเลขบัญชี</a>
                 </div>
             </li>
-
 
         </ul>
         
 
         <a class="btn btn-outline-dark" href="#" onclick="return confirm('ต้องการออกจากระบบ?')">Logout</a>
+
+
+
     </div>
 </nav>

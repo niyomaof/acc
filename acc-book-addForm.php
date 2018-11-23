@@ -19,7 +19,7 @@
                     <div class="form-group">
                         <label>รายการ</label>
                         <select class="form-control" name="id_acc">
-                            <option value="">เลือกรายการ</option>
+                            <option value="0">เลือกรายการ</option>
                             <?php
                             while ($data = mysqli_fetch_array($result)) {
                             ?>
@@ -33,16 +33,16 @@
                     </div>
 
                     <div class="form-group">
-                        <label>จำนวณเงิน</label>
-                        <input type="text" name="cost" class="form-control" placeholder="กรอกจำนวนเงิน" required>
+                        <label>จำนวนเงิน</label>
+                        <input type="number" step="0.01" name="cost" class="form-control" placeholder="กรอกจำนวนเงิน">
                     </div>
 
                     <div class="form-group">
                         <label>ประเภท</label>
-                        <select class="form-control"name="status">
+                        <select class="form-control"name="status" required>
                             <option value="">เลือกประเภท</option>
                             <option value="debit">เดบิด</option>
-                            <option value="cardit">เครดิต</option>
+                            <option value="credit">เครดิต</option>
                             <option value="note">หมายเหตุ</option>
                         </select>
                     </div>
