@@ -10,8 +10,7 @@ $arr_month = ["","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","�
             </div>
             <div class="card-body">
                 <?php
-                $check_year_duplicate = 0;
-
+                
                 $sql = "SELECT * FROM tb_account_book GROUP BY YEAR(date) ORDER BY YEAR(date) ASC";
                 $queryYear = mysqli_query($conn, $sql);
                 while($rowYear = mysqli_fetch_array($queryYear)){
@@ -86,7 +85,7 @@ $arr_month = ["","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","�
                                 $day = date("d", strtotime($rowBook['date']));
                                 
                                 if($check_day_duplicate != $day){
-                                    echo $day;
+                                    echo (int)$day;
                                 }
                                 $check_day_duplicate = $day;
                                 ?>
