@@ -33,6 +33,10 @@
                 </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="?menu=acc-ledger-show">บัญชีแยกประเภท</a>
+            </li>
+
         </ul>
         
 

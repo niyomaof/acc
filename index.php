@@ -22,7 +22,7 @@ require_once('connect/db.php');
         ?>
     </header>
 
-    <div class="container">
+    
     <?php
     if (isset($_REQUEST['menu'])) {
         include $_REQUEST['menu'] . '.php';
@@ -34,7 +34,7 @@ require_once('connect/db.php');
         <?php
     }
     ?>
-    </div>
+   
 
     <!-- JS -->
     <script src="assets/jquery/jquery.js"></script>
