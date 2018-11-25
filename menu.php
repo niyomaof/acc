@@ -8,7 +8,7 @@
         <ul class="navbar-nav mr-auto">
 
             <li class="nav-item">
-                <a class="nav-link" href="?menu=home">Home</a>
+                <a class="nav-link" href="">Home</a>
             </li>
 
             <li class="nav-item dropdown">
@@ -36,6 +36,15 @@
             <li class="nav-item">
                 <a class="nav-link" href="?menu=acc-ledger-show">บัญชีแยกประเภท</a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="?menu=acc-test-show">งบทดลอง</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="?menu=acc-worksheet-show">กระดาษทำการ</a>
+            </li>
+
 
         </ul>
         

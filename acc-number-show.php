@@ -32,7 +32,7 @@
                                 <a href="?menu=acc-number-editForm&id=<?=$row['id']?>" class="btn btn-outline-primary">
                                     <i class="fa fa-pencil"></i>
                                 </a>
-
+                                
                                 <a href="?menu=acc-number-delDB&id=<?=$row['id']?>" class="btn btn-outline-danger" onclick="return confirm('ยืนยันการลบ')">
                                     <i class="fa fa-trash"></i>
                                 </a>
@@ -50,4 +50,3 @@
     </div>
 </div>
 </div>
-

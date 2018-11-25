@@ -6,7 +6,7 @@
                 <h4> แก้ไขหมายเลขบัญชี </h4>
             </div>
             <div class="card-body">
-            
+                
                 <form action="?menu=acc-number-editDB"  method="POST">
                     <?php
                     $id = $_REQUEST['id'];
