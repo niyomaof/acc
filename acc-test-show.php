@@ -1,8 +1,8 @@
 <div class="container">
     <br>
     <?php
-$arr_month = ["","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค."];
-?>
+    $arr_month = ["","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค."];
+    ?>
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -11,12 +11,12 @@ $arr_month = ["","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","�
                 </div>
                 <div class="card-body">
                     <?php
-        $sql = "SELECT * FROM tb_account_book GROUP BY YEAR(date) ORDER BY YEAR(date) ASC";
-        $queryYear = mysqli_query($conn, $sql);
-        while($rowYear = mysqli_fetch_array($queryYear)){
-            $yearOriginal = date("Y", strtotime($rowYear['date']));
-            $year = date("Y", strtotime($rowYear['date'])) + 543;
-        ?>
+                    $sql = "SELECT * FROM tb_account_book GROUP BY YEAR(date) ORDER BY YEAR(date) ASC";
+                    $queryYear = mysqli_query($conn, $sql);
+                    while($rowYear = mysqli_fetch_array($queryYear)){
+                        $yearOriginal = date("Y", strtotime($rowYear['date']));
+                        $year = date("Y", strtotime($rowYear['date'])) + 543;
+                    ?>
 
 
                     <table class="table table-bordered table-hover">

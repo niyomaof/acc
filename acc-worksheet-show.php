@@ -15,6 +15,7 @@
                                 <th colspan="2">งบทดลอง</th>
                                 <th colspan="2">งบกำไรขาดทุน</th>
                                 <th colspan="2">งบดุล</th>
+
                             </tr>
 
                             <tr class="text-center">
@@ -24,6 +25,7 @@
                                 <th>เครดิต</th>
                                 <th>เดบิต</th>
                                 <th>เครดิต</th>
+
 
                             </tr>
                         </thead>
@@ -127,7 +129,7 @@
 
                         $total_debit = 0;
                         $total_credit = 0;
-
+                        
                         $check_month_duplicate = 0;
                         $check_day_duplicate = 0;
                         for($i = 0; $i < count($Root_Arr); $i++ ){
@@ -156,138 +158,263 @@
                         ?>
                         <tbody>
                             <tr class="text-center">
-                                <th class="text-left">
+                                <td class="text-left">
                                     <?=$rowAccNum['acc_title']?>
-                                </th>
-                                <th>
+                                </td>
+                                <td>
                                     <?=$rowAccNum['acc_number']?>
-                                </th>
+                                </td>
                                 <!-- เดบิต งบทดลอง -->
-                                <th>
-                                <?php
+
+                                <td>
+                                    <?php
                                     if($total_debit >= $total_credit ){
                                         $total_test_debit_all = $total_test_debit_all + ($total_debit - $total_credit);
                                         ?>
-                                        <?=number_format($total_debit - $total_credit)?>
-                                        <?php
+                                    <?=number_format($total_debit - $total_credit)?>
+                                    <?php
                                     }
-                                    ?>           
-                                </th>
+                                    ?>
+                                </td>
                                 <!-- เคดิต งบทดลอง-->
-                                <th>
-                                <?php
+                                <td>
+                                    <?php
                                     if($total_credit > $total_debit ){
                                         $total_test_credit_all = $total_test_credit_all + ($total_credit - $total_debit);
                                         
                                         ?>
-                                        <?=number_format($total_credit - $total_debit)?>
-                                        <?php
+                                    <?=number_format($total_credit - $total_debit)?>
+                                    <?php
                                     }
                                     ?>
-                                </th>
+                                </td>
                                 <!-- เดบิต งบกำไรขาดทุน-->
-                                <th>
-                                <?php
+                                <td>
+                                    <?php
                                 $acc_numfirst = $rowAccNum['acc_number'];
                                 if($acc_numfirst[0] == '4' || $acc_numfirst[0] == '5'){
                                     if($total_debit >= $total_credit ){
                                         $total_profit_and_lost_debit_all = $total_profit_and_lost_debit_all + ($total_debit - $total_credit);
                                         ?>
-                                        <?=number_format($total_debit - $total_credit)?>
-                                        <?php
+                                    <?=number_format($total_debit - $total_credit)?>
+                                    <?php
                                     }
                                 }
-                                    ?> 
-                                </th>
+                                    ?>
+                                </td>
                                 <!-- เคดิต งบกำไรขาดทุน-->
-                                <th>
-                                <?php
+                                <td>
+                                    <?php
                                 $acc_numfirst = $rowAccNum['acc_number'];
                                 if($acc_numfirst[0] == '4' || $acc_numfirst[0] == '5'){
                                     if($total_credit > $total_debit ){
                                         $total_profit_and_lost_credit_all = $total_profit_and_lost_credit_all + ($total_credit - $total_debit);
                                         
                                         ?>
-                                        <?=number_format($total_credit - $total_debit)?>
-                                        <?php
+                                    <?=number_format($total_credit - $total_debit)?>
+                                    <?php
                                     }
                                 }
                                     ?>
-                                </th>
+                                </td>
                                 <!-- เดบิต งบดุล-->
-                                <th> <?php
+                                <td>
+                                    <?php
                                 $acc_numfirst = $rowAccNum['acc_number'];
                                 if($acc_numfirst[0] == '1' || $acc_numfirst[0] == '2' || $acc_numfirst[0] == '3'){
                                     if($total_debit >= $total_credit ){
                                         $total_balance_debit_all = $total_balance_debit_all + ($total_debit - $total_credit);
                                         ?>
-                                        <?=number_format($total_debit - $total_credit)?>
-                                        <?php
+                                    <?=number_format($total_debit - $total_credit)?>
+                                    <?php
                                     }
                                 }
-                                    ?> </th>
+                                    ?>
+                                </td>
+
                                 <!-- เคดิต งบดุล-->
-                                <th><?php
+                                <td>
+                                    <?php
                                 $acc_numfirst = $rowAccNum['acc_number'];
                                 if($acc_numfirst[0] == '1' || $acc_numfirst[0] == '2' || $acc_numfirst[0] == '3'){                                                              
                                     if($total_credit > $total_debit ){
                                         $total_balance_credit_all = $total_balance_credit_all + ($total_credit - $total_debit);
                                         
                                         ?>
-                                        <?=number_format($total_credit - $total_debit)?>
-                                        <?php
+                                    <?=number_format($total_credit - $total_debit)?>
+                                    <?php
                                         }                                      
                                     }
-                                    ?></th>
-
+                                     
+                                    ?>
+                                </td>
 
                             </tr>
                         </tbody>
                         <?php
                             }
                          ?>
-
-                         <tfoot>
+                        <tfoot>
                             <tr>
                                 <th> &nbsp; </th>
                                 <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
+                                <th class="text-center">
+                                    <b>
+                                        <?=number_format($total_test_debit_all)?></b>
+                                </th>
+                                <th class="text-center">
+                                    <b>
+                                        <?=number_format($total_test_credit_all)?></b>
+                                </th>
+
+                                <th class="text-center">
+                                    <b>
+                                        <?=number_format($total_profit_and_lost_debit_all)?></b>
+                                </th>
+                                <th class="text-center">
+                                    <b>
+                                        <?=number_format($total_profit_and_lost_credit_all)?></b>
+                                </th>
+
+
+                                <th class="text-center">
+                                    <b>
+                                        <?=number_format($total_balance_debit_all)?></b>
+                                </th>
+                                <th class="text-center">
+                                    <b>
+                                        <?=number_format($total_balance_credit_all)?></b>
+                                </th>
                             </tr>
-                            <tr>
-                                <th> <h5>ผลรวม</h5> </th>
+                            
+                            <tr class="text-center">
+                                <th>
+                                    <h5>กำไรสุทธิ</h5>
+                                </th>
                                 <th></th>
-                                <th class="text-center">
-                                    <b><?=number_format($total_test_debit_all)?></b>
-                                </th>                                
-                                <th class="text-center">
-                                    <b><?=number_format($total_test_credit_all)?></b>
+                                <th></th>
+                                <th></th>
+                                <!-- งบกำไรขาดทุน กลาง-->
+                                <th>
+                                    <?php
+                               
+                               if($total_profit_and_lost_debit_all <= $total_profit_and_lost_credit_all){
+                                $total_profit_and_lost =  $total_profit_and_lost_credit_all - $total_profit_and_lost_debit_all;
+                                    ?>
+                                    <b>
+                                        <?=number_format( $total_profit_and_lost)?></b>
+                                    <?php
+                                    }
+                           
+                                    ?>
                                 </th>
-
-
-                                <th class="text-center">
-                                    <b><?=number_format($total_profit_and_lost_debit_all)?></b>
+                                <th>
+                                    <?php
+                                if ($total_profit_and_lost_credit_all < $total_profit_and_lost_debit_all) {                                                      
+                                $total_profit_and_lost = $total_profit_and_lost_debit_all - $total_profit_and_lost_credit_all;                                   
+                                    ?>
+                                    <b>
+                                        <?=number_format( $total_profit_and_lost)?></b>
+                                    <?php
+                                    }
+                                    ?>
+                                </th> 
+                                <!-- งบดุล กลาง-->
+                                <th>
+                                    <?php                              
+                               if($total_balance_debit_all <= $total_balance_credit_all){
+                                $total_balance =  $total_balance_credit_all - $total_balance_debit_all;
+                                    ?>
+                                    <b>
+                                        <?=number_format( $total_balance)?></b>
+                                    <?php
+                                    }                          
+                                    ?>
                                 </th>
-                                <th class="text-center">
-                                    <b><?=number_format($total_profit_and_lost_credit_all)?></b>
+                                <th>
+                                    <?php                              
+                               if($total_balance_credit_all < $total_balance_debit_all){
+                                $total_balance =  $total_balance_debit_all - $total_balance_credit_all;
+                                    ?>
+                                    <b>
+                                        <?=number_format( $total_balance)?></b>
+                                    <?php
+                                    }                          
+                                    ?>
                                 </th>
-
-
-                                <th class="text-center">
-                                    <b><?=number_format($total_balance_debit_all)?></b>
-                                </th>
-                                <th class="text-center">
-                                    <b><?=number_format($total_balance_credit_all)?></b>
-                                </th>
+                            </tr>
+                                   
+                            <tr class="text-center">
+                                <th>&nbsp;</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <!-- งบกำไรขาดทุน ผลรวมล่างสุด-->
+                                <th>
+                                <?php
+                                    if ($total_profit_and_lost_debit_all < $total_profit_and_lost_credit_all ) {
+                                        $total_profit_and_lost_all =  $total_profit_and_lost + $total_profit_and_lost_debit_all;
+                                        ?>                                        
+                                        <?=number_format($total_profit_and_lost_all)?>
+                                        <?php
+                                    } else {
+                                       ?>                                      
+                                       <?=number_format($total_profit_and_lost_debit_all)?>
+                                       <?php
+                                    }                                    
+                                ?>
                                 
+                                </th>
+                                <th>
+                                <?php
+                                    if ($total_profit_and_lost_credit_all < $total_profit_and_lost_debit_all ) {
+                                        $total_profit_and_lost_all = $total_profit_and_lost + $total_profit_and_lost_credit_all;
+                                        ?>
+                                        <?=number_format($total_profit_and_lost_all)?>
+                                        <?php
+                                    } else {
+                                       ?>
+                                       <?=number_format($total_profit_and_lost_credit_all)?>
+                                       <?php
+                                    }                                   
+                                ?>
+                                
+                                </th>
+                                <!-- งบดุล ผลรวมล่างสุด -->
+                                <th>
+                                <?php
+                                    if ($total_balance_debit_all < $total_balance_credit_all) {
+                                        $total_balance_all = $total_balance + $total_balance_debit_all;
+                                    ?>
+                                    
+                                        <?=number_format($total_balance_all)?>
+                                    <?php
+                                    } else {
+                                    ?>
+                                    
+                                        <?=number_format($total_balance_debit_all)?>
+                                    <?php  
+                                    }                                   
+                                ?>
+                                
+                                </th>
+                                <th>
+                                <?php
+                                    if ($total_balance_credit_all < $total_balance_debit_all ) {
+                                    $total_balance_all = $total_balance + $total_balance_credit_all;
+                                    ?>                                   
+                                        <?=number_format($total_balance_all)?>
+                                    <?php
+                                    } else {
+                                    ?>                                   
+                                        <?=number_format($total_balance_credit_all)?>
+                                    <?php
+                                    }                               
+                                ?>
+                                </th>
                             </tr>
                         </tfoot>
                     </table>
-
                 </div>
             </div>
         </div>

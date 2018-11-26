@@ -23,6 +23,7 @@
                         
                         $index = 1;
                         while($row = mysqli_fetch_array($query)){
+                        
                         ?>
                         <tr>
                             <td> <?=$index?> </td>
