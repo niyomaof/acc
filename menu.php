@@ -29,8 +29,12 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="?menu=acc-book-addForm">บันทึกบัญชี</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="?menu=acc-book-show">แสดงรายการเลขบัญชี</a>
+                    <a class="dropdown-item" href="?menu=acc-book-show-edit">แสดงรายการบันทึกบัญชี</a>
                 </div>
+            </li>
+
+             <li class="nav-item">
+                <a class="nav-link" href="?menu=acc-book-show">สมุดรายวันทั่วไป</a>
             </li>
 
             <li class="nav-item">
