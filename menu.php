@@ -8,7 +8,7 @@
         <ul class="navbar-nav mr-auto">
 
             <li class="nav-item">
-                <a class="nav-link" href="">Home</a>
+                <a class="nav-link" href="?menu=home">Home</a>
             </li>
 
             <li class="nav-item dropdown">
@@ -51,11 +51,22 @@
 
 
         </ul>
-        
+        <?php
 
-        <a class="btn btn-outline-dark" href="#" onclick="return confirm('ต้องการออกจากระบบ?')">Logout</a>
+    if(isset($_SESSION['LOGIN_ADMIN'])){
+      ?>
+      <a class="btn btn-danger" href="?menu=logout" onclick="return confirm('คุณต้องการจะออก');">
+      <i class="fa fa-sign-in"></i>
+      Logout</a>
+      <?php
 
-
-
+    }else {
+      ?>
+        <a class="btn btn-success"  href="?menu=login" onclick="return confirm('ต้องการเข้าระบบ?')">
+        <i class="fa fa-sign-out"></i>
+        Login</a>   
+      <?php
+    }
+     ?>
     </div>
 </nav>

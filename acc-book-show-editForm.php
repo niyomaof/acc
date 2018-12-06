@@ -1,3 +1,4 @@
+<?php include("chk.php") ; ?>
 <div class="container">
 <div class="row">
     <div class="col-md-12">
@@ -10,7 +11,7 @@
                 <form action="?menu=acc-number-editDB"  method="POST">
                     <?php
                     $id = $_REQUEST['id'];
-                    $sql = "SELECT  b.date, b.detail, b.cost, b.status,u.acc_number, u.acc_title FROM tb_account_book AS b INNER JOIN tb_account_number AS u ON b.id = u.id";
+                    $sql = "SELECT * FROM tb_account_book WHERE id = '$id'";
                     $query = mysqli_query($conn, $sql);
                     $row = mysqli_fetch_array($query);
                     ?>
@@ -20,20 +21,51 @@
                     </div>
                     <div class="form-group">
                         <label>วันที่</label>
-                        <input type="date" name="date" value="<?=$row['date']?>" class="form-control" readonly>
+                        <input type="date" name="date" value="<?=$row['date']?>" class="form-control" >
                     </div>
+
+                    <?php
+                    $sql = "SELECT * FROM tb_account_number ORDER BY acc_number ASC";
+                    $result = mysqli_query($conn, $sql);
+                    ?>
                     <div class="form-group">
                         <label>รายการ</label>
-                        <input type="text" name="id_acc" value="<?=$row['acc_title']?>" class="form-control" required>
+                        <select class="form-control" name="id_acc">
+                            <option value="0">เลือกรายการ</option>
+                            <?php
+                            while ($data = mysqli_fetch_array($result)) {
+                                if ($data['id'] == $row['id_acc']) {
+                                    ?>
+                                    <option value="<?php echo $data["id"];?>" selected>                                    
+                                        <?php echo $data["acc_number"].' - '.$data["acc_title"];?>
+                                    </option>
+                                    <?php
+                                }else {
+                                    ?>
+                                    <option value="<?php echo $data["id"];?>">
+                                        <?php echo $data["acc_number"].' - '.$data["acc_title"];?>
+                                    </option>
+                                    <?php
+                                }
+                            
+                            }
+                            ?>
+                        </select>                       
                     </div>
                     <div class="form-group">
                         <label>บาท</label>
-                        <input type="text" step="0.01" name="cost" value="" class="form-control" required>
+                        <input type="text" step="0.01" name="cost" value="<?=$row['cost']?>" class="form-control" required>
                     </div> 
                     <div class="form-group">
                         <label>ประเภท</label>
-                        <input type="text" name="status" value="" class="form-control" required>
-                    </div>                   
+                        <input type="text" name="status" value="<?=$row['status']?>" class="form-control" required>
+                    </div>   
+
+                    <div class="form-group">
+                        <label>รายละเอียด</label>
+                        <input type="text" name="detail" value="<?=$row['detail']?>" class="form-control" required>
+                    </div> 
+
                     <button type="submit" class="btn btn-primary">แก้ไข</button>
                 </form>
             </div>

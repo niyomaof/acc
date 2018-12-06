@@ -1,3 +1,4 @@
+<?php include("chk.php") ; ?>
 <div class="container">
 <?php
 $arr_month = ["","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค."];
@@ -46,7 +47,7 @@ $arr_month = ["","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","�
                         $total_debit = 0.00;
                         $total_credit = 0.00;
     
-                        $sql = "SELECT * FROM tb_account_book WHERE YEAR(date) = '$yearOriginal' ORDER BY date ASC, id ASC";
+                        $sql = "SELECT * FROM tb_account_book WHERE YEAR(date) = '$yearOriginal' ORDER BY date ASC, status ASC , id ASC";
                         $queryBook = mysqli_query($conn, $sql);
                         $arr_book[] = array();
                         while($row = mysqli_fetch_array($queryBook)){

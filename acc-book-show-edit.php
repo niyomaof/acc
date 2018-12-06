@@ -1,3 +1,4 @@
+<?php include("chk.php") ; ?>
 <div class="container">
 <div class="row">
     <div class="col-md-12">
@@ -22,7 +23,7 @@
                     </thead>
                     <tbody>
                         <?php
-                        $sql = "SELECT * FROM tb_account_book ORDER BY id ASC";
+                        $sql = "SELECT * FROM tb_account_book ORDER BY date ASC";
                         $queryBook = mysqli_query($conn, $sql);
                         
                         $index = 1;
@@ -44,7 +45,7 @@
                             <td><?=$rowBook['detail']?> </td>
                             
                             <td>
-                                <a href="?menu=acc-book-show-editForm&id=<?=$rowAccNum['id']?>" class="btn btn-outline-primary">
+                                <a href="?menu=acc-book-show-editForm&id=<?=$rowBook['id']?>" class="btn btn-outline-primary">
                                     <i class="fa fa-pencil"></i>
                                 </a>
                                 

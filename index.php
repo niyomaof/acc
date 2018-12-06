@@ -1,5 +1,8 @@
 <?php
+session_start();
+error_reporting(0);
 require_once('connect/db.php');
+require_once 'chk-session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +21,8 @@ require_once('connect/db.php');
     <link rel="stylesheet" href="assets/datepicker/gijgo/css/gijgo.css">
 
     <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+
+
 </head>
 <body>
     <header>
@@ -95,6 +100,7 @@ require_once('connect/db.php');
         });
 
     </script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 
 </body>
 </html>
