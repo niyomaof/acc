@@ -331,7 +331,7 @@
                                     <?php
                                     }                          
                                     ?>
-                                </th>
+                                </th>                               
                                 <th>
                                     <?php                              
                                if($total_balance_credit_all < $total_balance_debit_all){

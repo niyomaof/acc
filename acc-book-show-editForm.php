@@ -8,7 +8,7 @@
             </div>
             <div class="card-body">
                 
-                <form action="?menu=acc-number-editDB"  method="POST">
+                <form action="?menu=acc-book-show-editDB"  method="POST">
                     <?php
                     $id = $_REQUEST['id'];
                     $sql = "SELECT * FROM tb_account_book WHERE id = '$id'";
@@ -63,7 +63,7 @@
 
                     <div class="form-group">
                         <label>รายละเอียด</label>
-                        <input type="text" name="detail" value="<?=$row['detail']?>" class="form-control" required>
+                        <input type="text" name="detail" value="<?=$row['detail']?>" class="form-control" >
                     </div> 
 
                     <button type="submit" class="btn btn-primary">แก้ไข</button>

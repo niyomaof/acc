@@ -46,7 +46,7 @@ $arr_month = ["","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","�
                         $check_day_duplicate = 0;
                         $total_debit = 0.00;
                         $total_credit = 0.00;
-    
+                        
                         $sql = "SELECT * FROM tb_account_book WHERE YEAR(date) = '$yearOriginal' ORDER BY date ASC, status ASC , id ASC";
                         $queryBook = mysqli_query($conn, $sql);
                         $arr_book[] = array();

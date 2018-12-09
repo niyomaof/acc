@@ -13,13 +13,9 @@ require_once 'chk-session.php';
     <title>Acc</title>
 
     <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="assets/css/sticky-footer-navbar.css">
-
     <link rel="stylesheet" href="assets/datatable/jquery.dataTables.min.css">
-
     <link rel="stylesheet" href="assets/datepicker/gijgo/css/gijgo.css">
-
     <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
 
 

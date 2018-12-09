@@ -127,11 +127,6 @@
                         $Root_Arr[$indexCredit]['credit'] = $creditArr;
                         $indexCredit++;
                     }
-                    // $Root_Arr = array('debit' => $debitArr, 'credit' => $creditArr);
-                    // echo '<pre>';
-                    //print_r($Root_Arr);
-                    // echo '</pre>';
-
                 ?>
 
 

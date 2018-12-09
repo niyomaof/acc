@@ -23,7 +23,7 @@
                     </thead>
                     <tbody>
                         <?php
-                        $sql = "SELECT * FROM tb_account_book ORDER BY date ASC";
+                        $sql = "SELECT * FROM tb_account_book ORDER BY date ASC"; 
                         $queryBook = mysqli_query($conn, $sql);
                         
                         $index = 1;
